@@ -1,8 +1,10 @@
 import './App.css';
 import LikeImage from './components/LikeImage';
 import LikePost from './components/LikePost';
+import React,{Component} from 'react';
 
-function App() {
+class App extends Component{
+  render(){
   return (
     <div>
       <h3>Some Blog</h3>
@@ -13,5 +15,5 @@ function App() {
     </div>
   );
 }
-
+}
 export default App;

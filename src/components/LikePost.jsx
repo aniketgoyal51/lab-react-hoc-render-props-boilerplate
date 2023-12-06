@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
+import Upgrade from './Upgrade'
 
-export default function LikePost() {
-
-  const [likePostCounter, setPostCounter] = useState(0);
-
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
+class LikePost extends Component {
+  render() {
+    const{count,increment}=this.props
+    return (
+      <div>
+        <button onClick={increment}>Like Post {count}</button>
+      </div>
+    )
   }
-
-  return (
-    <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
-    </div>
-  )
 }
+
+export default Upgrade(LikePost)

@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
+import Upgrade from './Upgrade'
 
-export default function LikeImage() {
-
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
-
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
+class LikeImage extends Component{
+  render(){
+    const{count,increment}=this.props
+    return (
+      <div>
+        <button onClick={increment}>Like Image {count}</button>
+      </div>
+    )
   }
-
-  return (
-    <div>
-      <button onClick={handleLikeImageCount}>Like Image {likeImageCounter}</button>
-    </div>
-  )
 }
+
+export default Upgrade(LikeImage)
